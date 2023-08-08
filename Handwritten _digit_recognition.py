@@ -31,4 +31,10 @@ np.argmax(y_pred[1])
 y_pred=model.predict(x_test)
 plt.plot(h.history['accuracy'])
 plt.plot(h.history['val_accuracy'])
-
+y_predictedlabels=[np.argmax(i) for i in y_pred]
+c=tf.math.confusion_matrix(labels=y_test,predictions=y_predictedlabels)
+import seaborn as sns
+pl.figure(figsize=(10,7))
+sns.heatmap(c,annot=True,fmt='d')
+pl.xlabel("predicted")
+pl.ylabel("truth")
