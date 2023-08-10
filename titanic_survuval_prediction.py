@@ -1,5 +1,3 @@
-from google.colab import files
-uploaded=files.upload()      #import the required dataset in google colab
 import pandas as p
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
